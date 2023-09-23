@@ -1,0 +1,6 @@
+"dependencies": {
+    "@microsoft/aspnetcore": "7.0.0",
+    "@microsoft/aspnetcore.mvc": "7.0.0",
+    "newtonsoft.json": "13.0.1",
+    "cdek.api": "2.0.0"
+}
