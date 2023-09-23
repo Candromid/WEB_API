@@ -4,25 +4,26 @@ namespace Web_API.Services
 {
     public class CalculateService
     {
-        private readonly CdekCleint _cdekClient;
+        private readonly CdekClient _cdekClient;
 
-        public CalculateService (CdekCleint cdekClient)
+        public CalculateService(CdekClient cdekClient)
         {
             _cdekClient = cdekClient;
         }
 
         public CalculateResponse Calculate(CalculateRequest request)
         {
-            var calculateRequest = new CalculateRequest();
+            // Проверяем, корректны ли данные в запросе
+            // Например, можно проверить, что вес посылки не меньше нуля
+            if (request.Weight <= 0)
             {
-                Weight = request.Weight,
-                Dimensions = request.Dimensions,
-                FromCityCode = request.FromCityCode,
-                ToCityCode = request.ToCityCode,
-            };
+                throw new Exception("Вес посылки должен быть больше нуля.");
+            }
 
-            var calculateResponse = _cdekClient.Calculate(calculateRequest);
+            // Получаем ответ от API
+            var calculateResponse = _cdekClient.Calculate(request);
 
+            // Возвращаем результат
             return calculateResponse;
         }
     }

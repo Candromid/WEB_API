@@ -4,5 +4,6 @@
     {
         public string ServiceType { get; set; }
         public double TotalCost { get; set; }
+
     }
 }
