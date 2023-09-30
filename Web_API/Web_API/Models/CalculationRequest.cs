@@ -2,21 +2,16 @@
 {
     public class CalculationRequest
     {
-        public int Weight { get; set; }
-
-        public Dimensions Dimensionss { get; set; }
-
-        public string CityFrom { get; set; }
-
-        public string CityTo { get; set; }
+        public int Weight { get; set; } // Вес посылки
+        public Dimensions dimensions { get; set; } // Габариты посылки
+        public string CityFrom { get; set; } // Город отправления
+        public string CityTo { get; set; } // Город назначения
 
         public class Dimensions
         {
-            public int Width { get; set; }
-
-            public int Height { get; set; }
-
-            public int Length { get; set; }
+            public int Width { get; set; } // Ширина посылки
+            public int Height { get; set; } // Высота посылки
+            public int Length { get; set; } // Длина посылки
         }
     }
 }
